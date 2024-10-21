@@ -1,0 +1,22 @@
+pimcore:
+    objects:
+        select_options:
+            definitions:
+                ExampleSelection:
+                    id: ExampleSelection
+                    group: ''
+                    useTraits: ''
+                    implementsInterfaces: ''
+                    selectOptions:
+                        -
+                            value: manual1
+                            label: manual1
+                            name: Manual1
+                        -
+                            value: manual2
+                            label: manual2
+                            name: Manual2
+                        -
+                            value: manual3
+                            label: manual3
+                            name: Manual3
