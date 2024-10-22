@@ -96,6 +96,21 @@ services:
         volumes:
             - pimcore-test-var:/var/www/html/var
             - pimcore-test-public-var:/var/www/html/public/var
+        
+    # ADDED:  Add the phpMyAdmin service
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        restart: always
+        environment:
+            PMA_HOST: db
+            PMA_AUTH_TYPE: cookie  # Use cookie authentication
+            PMA_USER: root         # Optional: default user
+            PMA_PASSWORD: ROOT  # Optional: password for the default user
+        ports:
+        - "8088:80"  # Expose port 8080 for phpMyAdmin
+        depends_on:
+        - db
 
 
 volumes:

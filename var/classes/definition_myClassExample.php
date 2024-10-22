@@ -12,6 +12,13 @@
  * - myBrick [objectbricks]
  * - OptionEs [select]
  * - MultiSelectEs [multiselect]
+ * - classExRelashionship [manyToOneRelation]
+ * - manyToManyEx [manyToManyObjectRelation]
+ * - manyToOne [manyToOneRelation]
+ * - advancedManyToManyProva [advancedManyToManyObjectRelation]
+ * - localizedfields [localizedfields]
+ * -- localized1 [input]
+ * -- localized2 [wysiwyg]
  * - myText3 [input]
  * - myText4 [input]
  */
@@ -23,7 +30,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1729521184,
+   'modificationDate' => 1729601291,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -310,8 +317,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                     ),
                      'allowedTypes' => 
                     array (
-                      0 => 'secondObjectBrick',
-                      1 => 'objectBricksExampe',
                     ),
                      'maxItems' => 5,
                      'border' => false,
@@ -363,9 +368,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'blockedVarsForExport' => 
                     array (
                     ),
-                     'options' => 
-                    array (
-                    ),
                      'maxItems' => NULL,
                      'renderType' => 'list',
                      'dynamicOptions' => false,
@@ -373,9 +375,291 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'height' => '',
                      'width' => '',
                      'defaultValueGenerator' => '',
-                     'optionsProviderType' => 'configure',
-                     'optionsProviderClass' => '',
-                     'optionsProviderData' => '',
+                     'optionsProviderType' => 'select_options',
+                     'optionsProviderClass' => 'Pimcore\\Bundle\\CoreBundle\\OptionsProvider\\SelectOptionsOptionsProvider',
+                     'optionsProviderData' => 'ExampleSelection',
+                  )),
+                  5 => 
+                  \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+                     'name' => 'classExRelashionship',
+                     'title' => 'Class Ex Relashionship',
+                     'tooltip' => '',
+                     'mandatory' => false,
+                     'noteditable' => false,
+                     'index' => false,
+                     'locked' => false,
+                     'style' => '',
+                     'permissions' => NULL,
+                     'fieldtype' => '',
+                     'relationType' => true,
+                     'invisible' => false,
+                     'visibleGridView' => false,
+                     'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
+                     'classes' => 
+                    array (
+                      0 => 
+                      array (
+                        'classes' => 'classEx2',
+                      ),
+                    ),
+                     'displayMode' => 'grid',
+                     'pathFormatterClass' => '',
+                     'assetInlineDownloadAllowed' => true,
+                     'assetUploadPath' => '',
+                     'allowToClearRelation' => true,
+                     'objectsAllowed' => true,
+                     'assetsAllowed' => true,
+                     'assetTypes' => 
+                    array (
+                      0 => 
+                      array (
+                        'assetTypes' => 'image',
+                      ),
+                    ),
+                     'documentsAllowed' => true,
+                     'documentTypes' => 
+                    array (
+                      0 => 
+                      array (
+                        'documentTypes' => 'email',
+                      ),
+                    ),
+                     'width' => '',
+                  )),
+                  6 => 
+                  \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
+                     'name' => 'manyToManyEx',
+                     'title' => 'Many To Many Ex',
+                     'tooltip' => '',
+                     'mandatory' => false,
+                     'noteditable' => false,
+                     'index' => false,
+                     'locked' => false,
+                     'style' => '',
+                     'permissions' => NULL,
+                     'fieldtype' => '',
+                     'relationType' => true,
+                     'invisible' => false,
+                     'visibleGridView' => false,
+                     'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
+                     'classes' => 
+                    array (
+                      0 => 
+                      array (
+                        'classes' => 'classEx2',
+                      ),
+                    ),
+                     'displayMode' => 'grid',
+                     'pathFormatterClass' => '',
+                     'maxItems' => NULL,
+                     'visibleFields' => 'text3,id,fullpath,key,published,creationDate,modificationDate,filename,classname,text1,text2',
+                     'allowToCreateNewObject' => true,
+                     'allowToClearRelation' => true,
+                     'optimizedAdminLoading' => false,
+                     'enableTextSelection' => false,
+                     'visibleFieldDefinitions' => 
+                    array (
+                    ),
+                     'width' => '',
+                     'height' => '',
+                  )),
+                  7 => 
+                  \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+                     'name' => 'manyToOne',
+                     'title' => 'Many To One',
+                     'tooltip' => '',
+                     'mandatory' => false,
+                     'noteditable' => false,
+                     'index' => false,
+                     'locked' => false,
+                     'style' => '',
+                     'permissions' => NULL,
+                     'fieldtype' => '',
+                     'relationType' => true,
+                     'invisible' => false,
+                     'visibleGridView' => false,
+                     'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
+                     'classes' => 
+                    array (
+                      0 => 
+                      array (
+                        'classes' => 'classEx2',
+                      ),
+                    ),
+                     'displayMode' => 'grid',
+                     'pathFormatterClass' => '',
+                     'assetInlineDownloadAllowed' => false,
+                     'assetUploadPath' => '',
+                     'allowToClearRelation' => true,
+                     'objectsAllowed' => true,
+                     'assetsAllowed' => false,
+                     'assetTypes' => 
+                    array (
+                    ),
+                     'documentsAllowed' => false,
+                     'documentTypes' => 
+                    array (
+                    ),
+                     'width' => '',
+                  )),
+                  8 => 
+                  \Pimcore\Model\DataObject\ClassDefinition\Data\AdvancedManyToManyObjectRelation::__set_state(array(
+                     'name' => 'advancedManyToManyProva',
+                     'title' => 'Advanced Many To Many Prova',
+                     'tooltip' => '',
+                     'mandatory' => false,
+                     'noteditable' => false,
+                     'index' => false,
+                     'locked' => false,
+                     'style' => '',
+                     'permissions' => NULL,
+                     'fieldtype' => '',
+                     'relationType' => true,
+                     'invisible' => false,
+                     'visibleGridView' => false,
+                     'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
+                     'classes' => 
+                    array (
+                    ),
+                     'displayMode' => NULL,
+                     'pathFormatterClass' => '',
+                     'maxItems' => NULL,
+                     'visibleFields' => 'id,fullpath,key,published,creationDate,modificationDate,filename,classname,text1,text2,text3',
+                     'allowToCreateNewObject' => true,
+                     'allowToClearRelation' => true,
+                     'optimizedAdminLoading' => false,
+                     'enableTextSelection' => false,
+                     'visibleFieldDefinitions' => 
+                    array (
+                    ),
+                     'width' => '',
+                     'height' => '',
+                     'allowedClassId' => 'classEx2',
+                     'columns' => 
+                    array (
+                      0 => 
+                      array (
+                        'type' => 'text',
+                        'position' => 1,
+                        'key' => 'esKey1',
+                        'label' => 'eskey1relAdv',
+                        'value' => '12',
+                        'width' => 10,
+                      ),
+                    ),
+                     'columnKeys' => 
+                    array (
+                      0 => 'esKey1',
+                    ),
+                     'enableBatchEdit' => false,
+                     'allowMultipleAssignments' => false,
+                  )),
+                  9 => 
+                  \Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::__set_state(array(
+                     'name' => 'localizedfields',
+                     'title' => 'esLocalizedField',
+                     'tooltip' => NULL,
+                     'mandatory' => false,
+                     'noteditable' => false,
+                     'index' => false,
+                     'locked' => false,
+                     'style' => NULL,
+                     'permissions' => NULL,
+                     'fieldtype' => '',
+                     'relationType' => false,
+                     'invisible' => false,
+                     'visibleGridView' => true,
+                     'visibleSearch' => true,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
+                     'children' => 
+                    array (
+                      0 => 
+                      \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                         'name' => 'localized1',
+                         'title' => 'Localized1',
+                         'tooltip' => '',
+                         'mandatory' => false,
+                         'noteditable' => false,
+                         'index' => false,
+                         'locked' => false,
+                         'style' => '',
+                         'permissions' => NULL,
+                         'fieldtype' => '',
+                         'relationType' => false,
+                         'invisible' => false,
+                         'visibleGridView' => false,
+                         'visibleSearch' => false,
+                         'blockedVarsForExport' => 
+                        array (
+                        ),
+                         'defaultValue' => NULL,
+                         'columnLength' => 190,
+                         'regex' => '',
+                         'regexFlags' => 
+                        array (
+                        ),
+                         'unique' => false,
+                         'showCharCount' => false,
+                         'width' => '',
+                         'defaultValueGenerator' => '',
+                      )),
+                      1 => 
+                      \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
+                         'name' => 'localized2',
+                         'title' => 'Localized2',
+                         'tooltip' => '',
+                         'mandatory' => false,
+                         'noteditable' => false,
+                         'index' => false,
+                         'locked' => false,
+                         'style' => '',
+                         'permissions' => NULL,
+                         'fieldtype' => '',
+                         'relationType' => false,
+                         'invisible' => false,
+                         'visibleGridView' => false,
+                         'visibleSearch' => false,
+                         'blockedVarsForExport' => 
+                        array (
+                        ),
+                         'toolbarConfig' => '',
+                         'excludeFromSearchIndex' => false,
+                         'maxCharacters' => '',
+                         'height' => '',
+                         'width' => '',
+                      )),
+                    ),
+                     'region' => NULL,
+                     'layout' => NULL,
+                     'maxTabs' => NULL,
+                     'border' => false,
+                     'provideSplitView' => false,
+                     'tabPosition' => 'top',
+                     'hideLabelsWhenTabsReached' => NULL,
+                     'referencedFields' => 
+                    array (
+                    ),
+                     'permissionView' => NULL,
+                     'permissionEdit' => NULL,
+                     'labelWidth' => 100,
+                     'labelAlign' => 'left',
+                     'width' => '',
+                     'height' => '',
+                     'fieldDefinitionsCache' => NULL,
                   )),
                 ),
                  'locked' => false,
