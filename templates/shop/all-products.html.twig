@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop page</title>
+</head>
+
+<body>
+
+<style>
+    .bold{
+        font-weight: bold;
+    }
+</style>
+<div id="app">
+
+<div id="site">
+    <h1> {{ pimcore_wysiwyg("introductionTitle", {
+    "height": 200,
+    "width": 300,
+    "placeholder": "Enter your introduction title"
+}) }} </h1>
+
+{{ pimcore_snippet("headerSnippet") }}
+
+{% if editmode %}
+    <p>You are in editmode</p>
+{% endif %}
+
+ <h2>Package list:</h2>
+    {% for package in packageList %}
+        {% if package.isInvisible != true %}
+            <h3> Package {{ package.name }} </h3>
+                    <p> associated products: </p>
+                    {% for product in package.associatedProducts %}
+                    <ul>
+                        <li class="bold">{{ product.name }}</li>
+                    </ul>
+                    {% endfor %}
+                    <p> Category: {{ package.category}} </p>
+                    <p> Price: {{ package.price}} </p>
+                    {% if package.associatedImage %}
+                        <img src="{{ package.associatedImage.getThumbnail('package_thumbnail') }}" alt="{{ package.name }}">
+                    {% endif %}
+
+        {% endif %}
+    {% endfor %}
+    {{ pimcore_snippet("footerSnippet") }}
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+Here is the footer!
+Here you can register to the mailing list: 
+<div>
+    <input id="emailSubscriber" type="email" placeholder='email' />
+    <button onClick="subscribe()"> Subscribe </button>
+    <p id="myInput"></p>
+</div>
+
+<script>
+    async function subscribe(){
+        try {
+            const emailSubscriber = document.getElementById("emailSubscriber").value;
+
+            const response = await fetch('http://localhost/api/subscribe', {
+            method: 'POST', 
+            headers: {
+                Accept: 'application/json', 
+                'Content-type' : 'application/json'
+            },
+            body: JSON.stringify({emailSubscriber: emailSubscriber})
+            });
+            
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            
+            const data = await response.json(); 
+            console.log(data);
+            window.alert("good function call. Message: " + response.body.message);
+        } catch (error) {
+            console.error('There has been a problem with your fetch operation:', error); // Handle error
+        }
+    }
+</script>

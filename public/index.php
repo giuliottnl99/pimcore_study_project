@@ -32,5 +32,10 @@ return function (Request $request, array $context) {
     // reset current request - will be read from request stack from now on
     Tool::setCurrentRequest(null);
 
+    #enable erorr reporting:
+    // error_reporting(E_ALL);
+    // ini_set('display_errors', '1');
+
+
     return $kernel;
 };

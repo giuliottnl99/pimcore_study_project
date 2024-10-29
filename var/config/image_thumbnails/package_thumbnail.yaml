@@ -1,0 +1,27 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    package_thumbnail:
+                        items:
+                            -
+                                method: frame
+                                arguments:
+                                    width: 200
+                                    height: 200
+                                    forceResize: false
+                        medias: {  }
+                        name: package_thumbnail
+                        description: ''
+                        group: ''
+                        format: JPEG
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1729689500
+                        creationDate: 1729687458
+                        preserveAnimation: false
